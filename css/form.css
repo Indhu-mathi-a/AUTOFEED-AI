@@ -753,12 +753,13 @@
 /* ── Responsive ── */
 @media (max-width: 768px) {
     .form-main { padding: 80px 16px 60px; }
+    .progress-container { display: none; } /* Hide complex prog bar on mobile navbar */
     .input-row { flex-direction: column; align-items: stretch; }
     .btn-balanced { width: 100%; margin-top: 10px; }
     
     .form-container { 
-        padding: 40px 24px; 
-        border-radius: 24px;
+        padding: 40px 20px; 
+        border-radius: 20px;
     }
     
     .q-editor-card { 
@@ -778,14 +779,15 @@
     
     .scale-container { flex-direction: column; gap: 15px; }
     .scale-label-left, .scale-label-right { width: 100%; text-align: center; }
-    .scale-dots { width: 100%; }
+    .scale-dots { width: 100%; gap: 6px; }
+    .scale-dot { height: 38px; font-size: 0.9rem; }
     
     .q-header { gap: 12px; }
     .q-number { width: 32px; height: 32px; font-size: 0.9rem; }
-    .q-text { font-size: 1rem; }
+    .q-text { font-size: 1.05rem; }
     
     .share-card {
-        padding: 40px 24px;
+        padding: 32px 20px;
         border-radius: 24px;
     }
     .link-display {
@@ -795,6 +797,7 @@
     .link-text {
         text-align: center;
         width: 100%;
+        font-size: 0.75rem;
     }
     .link-display .btn-primary {
         width: 100%;
@@ -806,14 +809,17 @@
     .footer-content { flex-direction: column; gap: 20px; text-align: center; }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 520px) {
     .role-grid {
         grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 480px) {
     .form-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
     .form-icon {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 }

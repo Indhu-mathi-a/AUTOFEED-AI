@@ -141,6 +141,13 @@ body {
   box-shadow: 0 8px 25px rgba(124,58,237,0.4);
 }
 
+@media (max-width: 480px) {
+  .btn-nav {
+    padding: 7px 14px;
+    font-size: 0.75rem;
+  }
+}
+
 /* ── Buttons ── */
 .btn-primary {
   display: inline-flex;
@@ -804,22 +811,26 @@ body {
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 0 20px;
+        padding: 0 16px;
+        height: 60px;
     }
     .nav-links {
-        gap: 12px;
+        gap: 8px;
     }
     .nav-link {
-        display: none; /* Hide secondary links on mobile */
+        display: none; 
+    }
+    .nav-title {
+        font-size: 1.1rem;
     }
     
     .section {
-        padding: 80px 24px;
+        padding: 60px 20px;
     }
     
     .steps-grid {
         flex-direction: column;
-        gap: 24px;
+        gap: 16px;
     }
     .step-arrow {
         transform: rotate(90deg);
@@ -827,12 +838,15 @@ body {
     }
     
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        word-wrap: break-word;
     }
     
     .hero-stats {
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 16px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
     .stat-divider {
         display: none;
@@ -841,7 +855,7 @@ body {
     .footer-content {
         flex-direction: column;
         text-align: center;
-        gap: 24px;
+        gap: 20px;
     }
 }
 
@@ -853,12 +867,24 @@ body {
     .hero-actions .btn-primary, 
     .hero-actions .btn-secondary {
         justify-content: center;
+        width: 100%;
     }
     
     .hero-visual {
-        height: 350px;
+        height: auto;
+        min-height: 300px;
     }
     .visual-card {
-        width: 280px;
+        width: 100%;
+        max-width: 300px;
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none !important;
+        margin: 0 auto;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
     }
 }
