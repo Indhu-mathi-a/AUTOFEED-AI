@@ -1,0 +1,388 @@
+/* ============================================
+   AutoFeed AI – Premium Report Styles
+   ============================================ */
+
+.report-main {
+    padding-top: 100px;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+    padding-left: 24px;
+    padding-right: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Report Hero ── */
+.report-hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 40px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: var(--shadow-glow), var(--shadow-card);
+}
+
+.report-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 32px;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    box-shadow: 0 0 40px rgba(124, 58, 237, 0.4);
+}
+
+.report-meta {
+    flex: 1;
+}
+
+.report-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+.report-role-badge {
+    display: inline-flex;
+    padding: 8px 20px;
+    background: rgba(124, 58, 237, 0.15);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    border-radius: 50px;
+    color: #A78BFA;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.report-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.report-score-circle {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.score-ring {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.score-svg {
+    transform: rotate(-90deg);
+}
+
+.score-bg {
+    stroke: rgba(255, 255, 255, 0.05);
+}
+
+.score-fill {
+    stroke: url(#scoreGrad);
+    stroke-linecap: round;
+    transition: stroke-dashoffset 2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.score-number {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--text-primary);
+}
+
+.score-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+/* ── Report Grid ── */
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+/* ── Report Cards ── */
+.report-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 32px;
+    padding: 40px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: var(--transition);
+}
+
+.report-card:hover {
+    border-color: var(--glass-border-hover);
+    transform: translateY(-4px);
+}
+
+.report-card.full-width {
+    grid-column: span 2;
+}
+
+.card-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-title-icon {
+    font-size: 1.5rem;
+}
+
+/* ── Personality Card ── */
+.personality-card {
+    grid-column: span 2;
+    margin-bottom: 32px;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(6, 182, 212, 0.1));
+    border-color: rgba(124, 58, 237, 0.2);
+}
+
+.personality-display {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.personality-type {
+    flex: 1;
+}
+
+.personality-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--purple-light);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.personality-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.personality-desc {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.personality-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.personality-tag {
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.personality-emoji {
+    font-size: 6rem;
+    filter: drop-shadow(0 0 20px rgba(124, 58, 237, 0.3));
+    animation: floatEmoji 4s ease-in-out infinite;
+}
+
+@keyframes floatEmoji {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+/* ── Traits List ── */
+.traits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.trait-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.trait-item-label {
+    width: 140px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.trait-item-bar {
+    flex: 1;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.trait-item-fill {
+    height: 100%;
+    background: var(--c, var(--purple));
+    border-radius: 4px;
+    animation: growBar 1.5s ease-out forwards;
+    width: 0;
+}
+
+@keyframes growBar { from { width: 0; } to { width: var(--w); } }
+
+.trait-item-val {
+    width: 45px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+/* ── Patterns Grid ── */
+.patterns-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.pattern-item {
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.pattern-emoji { font-size: 2rem; margin-bottom: 12px; }
+.pattern-name { font-weight: 700; margin-bottom: 6px; }
+.pattern-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+
+/* ── Strength/Weakness List ── */
+.sw-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sw-item {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 4px solid var(--border-color, #fff);
+}
+
+.sw-item.strength { --border-color: var(--green); }
+.sw-item.weakness { --border-color: var(--amber); }
+
+.sw-icon { font-size: 1.25rem; margin-top: 2px; }
+.sw-item strong { display: block; margin-bottom: 4px; font-size: 1rem; }
+.sw-item span { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* ── Suggestions ── */
+.suggestions-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.suggestion-item {
+    display: flex;
+    gap: 20px;
+    padding: 28px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+}
+
+.suggestion-num {
+    width: 44px;
+    height: 44px;
+    background: var(--gradient);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.suggestion-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.suggestion-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .report-grid { grid-template-columns: 1fr; }
+    .report-card.full-width { grid-column: auto; }
+    .report-card.personality-card { grid-column: auto; }
+    .suggestions-list { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .report-hero { flex-direction: column; text-align: center; padding: 40px 24px; }
+    .personality-display { flex-direction: column; text-align: center; }
+    .patterns-grid { grid-template-columns: 1fr; }
+    .trait-item-label { width: 100px; font-size: 0.85rem; }
+}
+
+@media print {
+    .navbar, .particles, .btn-nav, .btn-secondary-sm { display: none !important; }
+    body { background: white; color: black; }
+    .report-main { padding: 0; }
+    .report-card, .report-hero { 
+        background: white !important; 
+        color: black !important; 
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+        margin-bottom: 20px;
+    }
+    .gradient-text, .report-name, .personality-name { background: none !important; -webkit-text-fill-color: black !important; color: black !important; }
+}

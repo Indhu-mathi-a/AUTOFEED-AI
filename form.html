@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="AutoFeed AI – Generate and answer personalized feedback questions based on your role." />
+    <title>Generate Feedback – AutoFeed AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/form.css" />
+</head>
+
+<body>
+    <div class="particles" id="particles"></div>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="nav-logo">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="18" stroke="url(#grad1)" stroke-width="2" />
+                    <circle cx="20" cy="12" r="3" fill="#7C3AED" />
+                    <circle cx="10" cy="26" r="3" fill="#06B6D4" />
+                    <circle cx="30" cy="26" r="3" fill="#8B5CF6" />
+                    <line x1="20" y1="15" x2="10" y2="23" stroke="#7C3AED" stroke-width="1.5" />
+                    <line x1="20" y1="15" x2="30" y2="23" stroke="#06B6D4" stroke-width="1.5" />
+                    <line x1="10" y1="26" x2="30" y2="26" stroke="#8B5CF6" stroke-width="1.5" />
+                    <defs>
+                        <linearGradient id="grad1" x1="0" y1="0" x2="40" y2="40">
+                            <stop offset="0%" stop-color="#7C3AED" />
+                            <stop offset="100%" stop-color="#06B6D4" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <a href="index.html" class="nav-title">AutoFeed <span class="gradient-text">AI</span></a>
+        </div>
+        <div class="progress-container">
+            <div class="progress-steps">
+                <div class="prog-step active" id="ps1">
+                    <span class="ps-num">1</span><span class="ps-label">Setup</span>
+                </div>
+                <div class="prog-connector" id="pc1"></div>
+                <div class="prog-step" id="ps2">
+                    <span class="ps-num">2</span><span class="ps-label">Questions</span>
+                </div>
+                <div class="prog-connector" id="pc2"></div>
+                <div class="prog-step" id="ps3">
+                    <span class="ps-num">3</span><span class="ps-label">Analysis</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="form-main">
+
+        <!-- STEP 1: Role & Purpose Setup -->
+        <div class="form-step active" id="step-1">
+            <div class="form-container">
+                <div class="form-header">
+                    <div class="form-icon">🎭</div>
+                    <h1 class="form-title">Tell Us About <span class="gradient-text">You</span></h1>
+                    <p class="form-subtitle">Select your role and feedback purpose so our AI can generate the most
+                        relevant questions for you.</p>
+                </div>
+
+                <div class="input-section">
+                    <label class="input-label">What is your role?</label>
+                    <div class="role-grid" id="role-grid">
+                        <button class="role-card" data-role="Student" id="role-Student" type="button">
+                            <span class="role-emoji">🎓</span>
+                            <span class="role-name">Student</span>
+                            <span class="role-desc">Academic & Learning</span>
+                        </button>
+                        <button class="role-card" data-role="Team Leader" id="role-TeamLeader" type="button">
+                            <span class="role-emoji">👥</span>
+                            <span class="role-name">Team Leader</span>
+                            <span class="role-desc">Leadership & Coordination</span>
+                        </button>
+                        <button class="role-card" data-role="Employee" id="role-Employee" type="button">
+                            <span class="role-emoji">💼</span>
+                            <span class="role-name">Employee</span>
+                            <span class="role-desc">Workplace Performance</span>
+                        </button>
+                        <button class="role-card" data-role="Manager" id="role-Manager" type="button">
+                            <span class="role-emoji">🏢</span>
+                            <span class="role-name">Manager</span>
+                            <span class="role-desc">Strategy & Management</span>
+                        </button>
+                        <button class="role-card" data-role="Teacher" id="role-Teacher" type="button">
+                            <span class="role-emoji">📚</span>
+                            <span class="role-name">Teacher</span>
+                            <span class="role-desc">Education & Mentoring</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-section">
+                    <label class="input-label">What is the feedback purpose?</label>
+                    <div class="purpose-grid" id="purpose-grid">
+                        <button class="purpose-chip" data-purpose="Performance" id="purp-Performance" type="button">
+                            <span>📊</span> Performance
+                        </button>
+                        <button class="purpose-chip" data-purpose="Leadership" id="purp-Leadership" type="button">
+                            <span>🚀</span> Leadership
+                        </button>
+                        <button class="purpose-chip" data-purpose="Communication" id="purp-Communication" type="button">
+                            <span>💬</span> Communication
+                        </button>
+                        <button class="purpose-chip" data-purpose="Teamwork" id="purp-Teamwork" type="button">
+                            <span>🤝</span> Teamwork
+                        </button>
+                        <button class="purpose-chip" data-purpose="Creativity" id="purp-Creativity" type="button">
+                            <span>🎨</span> Creativity
+                        </button>
+                        <button class="purpose-chip" data-purpose="Problem Solving" id="purp-ProblemSolving"
+                            type="button">
+                            <span>🧩</span> Problem Solving
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-section">
+                    <label class="input-label" for="user-name">Your Name <span class="opt">(Optional)</span></label>
+                    <input type="text" id="user-name" class="text-input" placeholder="Enter your name..."
+                        autocomplete="off" />
+                </div>
+
+                <button class="btn-primary btn-full" id="generate-btn" disabled>
+                    <span id="gen-btn-text">Select Role & Purpose First</span>
+                    <svg id="gen-btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- STEP 2: Generated Questions -->
+        <div class="form-step" id="step-2">
+            <div class="form-container form-container-wide">
+                <div class="form-header">
+                    <div class="ai-generating-indicator" id="ai-indicator">
+                        <div class="ai-spinner"></div>
+                        <span>AI is generating your questions...</span>
+                    </div>
+                    <div class="form-header-info" id="form-header-info" style="display:none">
+                        <h2 class="form-title">Your Personalized <span class="gradient-text">Feedback Form</span></h2>
+                        <p class="form-subtitle" id="form-subtitle-text"></p>
+                    </div>
+                </div>
+
+                <div class="questions-container" id="questions-container">
+                    <!-- Questions generated dynamically -->
+                </div>
+
+                <div class="form-footer-actions" id="form-footer" style="display:none">
+                    <div class="completion-info">
+                        <span id="answered-count">0</span> of <span id="total-count">0</span> questions answered
+                        <div class="progress-bar-mini">
+                            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+                        </div>
+                    </div>
+                    <button class="btn-primary" id="submit-btn" disabled>
+                        <span>Analyze My Responses</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 3: Analyzing (loading) -->
+        <div class="form-step" id="step-3">
+            <div class="analyzing-screen">
+                <div class="analyzing-animation">
+                    <div class="brain-pulse">🧠</div>
+                    <div class="analyzing-rings">
+                        <div class="ring r1"></div>
+                        <div class="ring r2"></div>
+                        <div class="ring r3"></div>
+                    </div>
+                </div>
+                <h2 class="analyzing-title">Analyzing Your <span class="gradient-text">Responses</span></h2>
+                <p class="analyzing-subtitle">Our AI is processing your answers to build your personality profile...</p>
+                <div class="analyzing-steps" id="analyzing-steps">
+                    <div class="astep" id="astep-1">
+                        <div class="astep-spinner"></div>
+                        <span>Processing linguistic patterns...</span>
+                    </div>
+                    <div class="astep pending" id="astep-2">
+                        <div class="astep-spinner"></div>
+                        <span>Mapping personality traits...</span>
+                    </div>
+                    <div class="astep pending" id="astep-3">
+                        <div class="astep-spinner"></div>
+                        <span>Identifying strengths & gaps...</span>
+                    </div>
+                    <div class="astep pending" id="astep-4">
+                        <div class="astep-spinner"></div>
+                        <span>Generating recommendations...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="js/particles.js"></script>
+    <script src="js/questions.js"></script>
+    <script src="js/form.js"></script>
+</body>
+
+</html>

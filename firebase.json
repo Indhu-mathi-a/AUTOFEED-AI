@@ -1,0 +1,28 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/create-form",
+        "destination": "/create-form.html"
+      },
+      {
+        "source": "/public-form",
+        "destination": "/public-form.html"
+      },
+      {
+        "source": "/dashboard",
+        "destination": "/dashboard.html"
+      },
+      {
+        "source": "/report",
+        "destination": "/report.html"
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit Feedback – AutoFeed AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/form.css" />
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="nav-title">AutoFeed <span class="gradient-text">AI</span></span>
+        </div>
+    </nav>
+
+    <main class="form-main">
+        <div class="form-container form-container-wide">
+            <div id="loading-view">
+                <div class="ai-generating-indicator">
+                    <div class="ai-spinner"></div>
+                    <span>Loading feedback form...</span>
+                </div>
+            </div>
+
+            <div id="form-view" style="display:none">
+                <div class="form-header">
+                    <h1 class="form-title">Submit <span class="gradient-text">Feedback</span></h1>
+                    <p class="form-subtitle" id="form-meta-text">Providing feedback for...</p>
+                </div>
+
+                <div class="questions-container" id="questions-container"></div>
+
+                <div class="form-footer-actions">
+                    <div class="completion-info">
+                        <span id="answered-count">0</span> Questions answered
+                        <div class="progress-bar-mini">
+                            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+                        </div>
+                    </div>
+                    <button class="btn-primary" id="submit-btn" disabled>
+                        <span>Submit My Feedback</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="success-view" style="display:none; text-align:center; padding: 40px;">
+                <div style="font-size:4rem; margin-bottom:20px">✨</div>
+                <h2 class="form-title">Thank You!</h2>
+                <p class="form-subtitle">Your feedback has been anonymously submitted. It will help in generating a detailed personality analysis.</p>
+                <div style="margin-top:30px">
+                    <a href="index.html" class="btn-primary">Build Your Own Form</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/particles.js"></script>
+    <script type="module" src="js/public.js"></script>
+</body>
+</html>

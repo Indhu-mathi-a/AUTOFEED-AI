@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Feedback Form – AutoFeed AI</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/form.css" />
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html" class="nav-title">AutoFeed <span class="gradient-text">AI</span></a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="dashboard.html" class="btn-nav">Dashboard</a>
+        </div>
+    </nav>
+
+    <main class="form-main">
+        <div class="form-container builder-container">
+            <div class="form-header">
+                <div class="form-icon">✨</div>
+                <h1 class="form-title">Build Your <span class="gradient-text">Feedback Link</span></h1>
+                <p class="form-subtitle">Create professional feedback loops in seconds. Share your link and gather anonymous insights.</p>
+            </div>
+
+            <!-- Pre-Load Setup -->
+            <div id="setup-view">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label class="input-label">Target Role</label>
+                        <div class="select-wrapper">
+                            <select id="role-select" class="custom-select">
+                                <option value="Student">Student</option>
+                                <option value="Employee">Employee</option>
+                                <option value="Team Leader">Team Leader</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Teacher">Teacher</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label">Focus Purpose</label>
+                        <div class="select-wrapper">
+                            <select id="purpose-select" class="custom-select">
+                                <option value="Performance">Performance</option>
+                                <option value="Leadership">Leadership</option>
+                                <option value="Communication">Communication</option>
+                                <option value="Teamwork">Teamwork</option>
+                                <option value="Creativity">Creativity</option>
+                                <option value="Problem Solving">Problem Solving</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button id="import-btn" class="btn-primary btn-balanced">
+                        <span>Initialize AI</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dynamic Editor -->
+            <div id="editor-view" style="display:none">
+                <div id="questions-list"></div>
+                <div class="add-q-card" id="add-q">
+                    <span>+ Add Custom Question</span>
+                </div>
+                
+                <div class="publish-footer">
+                    <div class="completion-info">
+                        <span id="q-count">0</span> Questions in this form
+                    </div>
+                    <button id="publish-btn" class="btn-primary" style="padding: 16px 48px;">
+                        <span>Publish & Copy Link</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div class="share-modal" id="share-modal">
+        <div class="share-card">
+            <div style="font-size:4rem; margin-bottom:24px">🎉</div>
+            <h2 class="form-title">Link <span class="gradient-text">Ready</span></h2>
+            <p style="color: var(--text-secondary);">Your anonymous feedback form is live and ready to be shared with your team.</p>
+            
+            <div class="link-display">
+                <span class="link-text" id="share-link-text"></span>
+                <button class="btn-primary" id="copy-btn" style="padding: 10px 24px;">Copy</button>
+            </div>
+            
+            <div style="display:flex; justify-content:center; gap:16px;">
+                <button class="btn-secondary" onclick="location.href='index.html'" style="flex:1">Home</button>
+                <a id="view-dashboard-btn" class="btn-primary" style="flex:1; justify-content:center">Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/particles.js"></script>
+    <script src="js/questions.js"></script>
+    <script type="module" src="js/builder.js"></script>
+</body>
+</html>

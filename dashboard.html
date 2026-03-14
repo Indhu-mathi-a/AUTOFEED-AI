@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard – AutoFeed AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/report.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html" class="nav-title">AutoFeed <span class="gradient-text">AI</span></a>
+        </div>
+        <div class="nav-links">
+            <a href="create-form.html" class="btn-primary">Create New Form</a>
+        </div>
+    </nav>
+
+    <main class="report-main" style="max-width: 1200px;"> <!-- Wider for dashboard -->
+        <div id="loading-view">
+            <div class="ai-generating-indicator">
+                <div class="ai-spinner"></div>
+                <span>Syncing feedback data...</span>
+            </div>
+        </div>
+
+        <div id="dashboard-view" style="display:none">
+            <div class="report-hero">
+                <div class="report-meta">
+                    <div class="report-name" id="dash-title">Feedback Dashboard</div>
+                    <div class="report-role-badge" id="dash-meta">Tracking results for...</div>
+                </div>
+                <div class="report-score-circle">
+                    <div class="score-number" id="total-resp-count">0</div>
+                    <div class="score-label">Responses</div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <span class="stat-val" id="avg-score">0%</span>
+                    <span class="stat-label">Consensus Score</span>
+                </div>
+                <div class="stat-card" style="grid-column: span 2;">
+                    <span class="stat-val" id="persona-name">Analyzing...</span>
+                    <span class="stat-label">AI consensus persona</span>
+                </div>
+
+                <div class="chart-container">
+                    <div class="card-title">
+                        <span class="card-title-icon">📊</span>
+                        <span>Trait Consensus Radar</span>
+                    </div>
+                    <div style="height: 400px; position: relative;">
+                        <canvas id="traitsRadarChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="comments-container">
+                    <div class="card-title">
+                        <span class="card-title-icon">💬</span>
+                        <span>Qualitative Feedback</span>
+                    </div>
+                    <div id="comments-list" style="max-height: 400px; overflow-y: auto; padding-right: 10px;"></div>
+                </div>
+            </div>
+            
+            <div style="margin-top:60px">
+                <div class="card-title">
+                    <span class="card-title-icon">🚀</span>
+                    <span>Strategic Recommendations</span>
+                </div>
+                <div id="suggestions-list" class="suggestions-list"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/particles.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
