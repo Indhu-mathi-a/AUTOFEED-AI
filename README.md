@@ -13,7 +13,6 @@ pinned: false
 
 AutoFeed AI is a state-of-the-art platform that transforms how feedback is collected and interpreted. By leveraging role-based logic and smart trait mapping, it converts raw data into deep, actionable personality insights.
 
-[![Deployment - Vercel](https://img.shields.io/badge/Deployment-Vercel-black?style=for-the-badge&logo=vercel)](https://autofeed-ai.vercel.app)
 [![Deployment - Hugging Face](https://img.shields.io/badge/Deployment-Hugging%20Face-yellow?style=for-the-badge&logo=huggingface)](https://huggingface.co/spaces/IndhumathiA/autofeed-ai)
 
 ---
@@ -48,7 +47,7 @@ AutoFeed AI bridges this gap by:
 - **Database**: Firebase Firestore (NoSQL Real-time DB).
 - **Visualization**: Chart.js for data mapping and radar charts.
 - **Backend (HF)**: Python Flask (serving static assets).
-- **Deployment**: Vercel & Hugging Face Spaces.
+- **Deployment**:  Hugging Face Spaces.
 
 ---
 
