@@ -126,8 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const shareUrl = `${window.location.origin}${base}?fid=${docRef.id}`;
             showModal(shareUrl, docRef.id);
         } catch (err) {
-            console.error("Error publishing:", err);
-            alert("Publishing failed. Check console for details.");
+            console.error("💥 Error publishing:", err);
+            // Provide more specific feedback if possible
+            const errorMsg = err.code ? `Error: ${err.code} - ${err.message}` : err.message || "Unknown connection error";
+            alert(`Publishing failed: ${errorMsg}\n\nTIP: Check your Firebase Firestore "Rules" tab. It might be in "Locked Mode".`);
             publishBtn.disabled = false;
             publishBtn.textContent = "Publish & Get Link";
         }
@@ -138,11 +140,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const linkText = document.getElementById('share-link-text');
         const copyBtn = document.getElementById('copy-btn');
         const hasHtml = window.location.pathname.includes('.html');
+        const dashBtn = document.getElementById('view-dashboard-btn');
         const dashTarget = hasHtml ? 'dashboard.html' : 'dashboard';
         
         linkText.textContent = url;
         modal.style.display = 'flex';
-        dashboardBtn.href = `${dashTarget}?fid=${id}`;
+        if (dashBtn) dashBtn.href = `${dashTarget}?fid=${id}`;
 
         copyBtn.addEventListener('click', () => {
             navigator.clipboard.writeText(url);

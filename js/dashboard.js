@@ -8,6 +8,7 @@ import { analyzeConsensus } from './analytics.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     const urlParams = new URLSearchParams(window.location.search);
+    const formId = urlParams.get('fid');
     const loadingView = document.getElementById('loading-view');
     const dashView = document.getElementById('dashboard-view');
 

@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
 
       <!-- New Analysis CTA -->
-      <div style="text-align:center;margin-top:48px;padding:48px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:20px;">
+      <div class="cta-section" style="text-align:center;margin-top:48px;padding:48px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:20px;">
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:12px;">Ready for Another Analysis?</h3>
         <p style="color:var(--text-secondary);margin-bottom:28px;">Try different roles or purposes to unlock more insights about yourself.</p>
         <a href="form.html" class="btn-primary" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:linear-gradient(135deg,#7C3AED,#06B6D4);border:none;border-radius:50px;color:white;font-size:1rem;font-weight:600;cursor:pointer;text-decoration:none;">

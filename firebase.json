@@ -12,17 +12,21 @@
         "destination": "/create-form.html"
       },
       {
-        "source": "/public-form",
-        "destination": "/public-form.html"
-      },
-      {
         "source": "/dashboard",
         "destination": "/dashboard.html"
+      },
+      {
+        "source": "/public-form",
+        "destination": "/public-form.html"
       },
       {
         "source": "/report",
         "destination": "/report.html"
       }
-    ]
+    ],
+    "cleanUrls": true
+  },
+  "firestore": {
+    "rules": "firestore.rules"
   }
 }

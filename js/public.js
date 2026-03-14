@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const urlParams = new URLSearchParams(window.location.search);
     const formId = urlParams.get('fid');
+    console.log("📄 Public form loading for FID:", formId);
 
     if (!formId) {
         if (loadingView) {
@@ -82,6 +83,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 inputHtml = `<div class="options-grid">${q.options.map((opt, oi) => `<button class="option-btn" data-val="${oi}" data-index="${index}" type="button"><span>${opt}</span></button>`).join('')}</div>`;
             } else if (q.type === 'text') {
                 inputHtml = `<textarea class="q-textarea" data-index="${index}" placeholder="Write your feedback here..."></textarea>`;
+            } else {
+                // Fallback for custom questions or missing types
+                inputHtml = `<textarea class="q-textarea" data-index="${index}" placeholder="Write your response here..."></textarea>`;
             }
 
             card.innerHTML = `
@@ -168,9 +172,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.getElementById('success-view').style.display = 'block';
             window.scrollTo(0, 0);
         } catch (err) {
-            console.error("Submission error:", err);
-            alert("Submission failed. Try again.");
+            console.error("💥 Submission error:", err);
+            const errorMsg = err.code ? `Error: ${err.code}` : "Connection failed";
+            alert(`Submission failed (${errorMsg}). Please check your connection and Firebase permissions.`);
             submitBtn.disabled = false;
+            submitBtn.textContent = "Submit Feedback";
         }
     });
 });
