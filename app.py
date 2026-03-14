@@ -14,5 +14,5 @@ def serve_static(path):
     return send_from_directory('.', path)
 
 if __name__ == "__main__":
-    # Hugging Face Spaces expectsport 7860
+    print("AutoFeed AI is running 🚀")
     app.run(host="0.0.0.0", port=7860)
