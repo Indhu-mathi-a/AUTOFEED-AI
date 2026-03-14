@@ -357,6 +357,57 @@
     line-height: 1.6;
 }
 
+/* ── Dashboard Specific ── */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backdrop-filter: blur(12px);
+    transition: var(--transition);
+}
+
+.stat-card:hover { border-color: var(--glass-border-hover); transform: translateY(-3px); }
+
+.stat-val {
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.chart-container {
+    grid-column: span 2;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 32px;
+    padding: 32px;
+    backdrop-filter: blur(12px);
+}
+
+.comments-container {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 32px;
+    padding: 32px;
+    backdrop-filter: blur(12px);
+}
+
 /* ── Responsive ── */
 @media (max-width: 1024px) {
     .report-grid { grid-template-columns: 1fr; }
@@ -365,11 +416,28 @@
     .suggestions-list { grid-template-columns: 1fr; }
 }
 
+@media (max-width: 992px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    .stat-card, .chart-container, .comments-container {
+        grid-column: auto !important;
+    }
+}
+
 @media (max-width: 768px) {
     .report-hero { flex-direction: column; text-align: center; padding: 40px 24px; }
-    .personality-display { flex-direction: column; text-align: center; }
+    .report-name { font-size: 2.2rem; }
+    .report-avatar { width: 100px; height: 100px; font-size: 3rem; }
+    
+    .personality-display { flex-direction: column; text-align: center; gap: 30px; }
+    .personality-emoji { font-size: 4.5rem; }
+    .personality-name { font-size: 1.8rem; }
+    
     .patterns-grid { grid-template-columns: 1fr; }
     .trait-item-label { width: 100px; font-size: 0.85rem; }
+    
+    .report-score-circle { justify-content: center; }
 }
 
 @media print {
