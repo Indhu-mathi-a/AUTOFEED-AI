@@ -893,9 +893,35 @@ body {
     }
     
     .btn-nav {
-        width: 100%;
+        width: auto;
         text-align: center;
-        margin-top: 10px;
+        margin-top: 0;
+        padding: 8px 14px;
+        font-size: 0.75rem;
+    }
+
+    /* Keep buttons in header on mobile for home page */
+    .home-page .nav-links {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        flex-direction: row;
+        padding: 0;
+        gap: 8px;
+        border-left: none;
+        box-shadow: none;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    .home-page .nav-link {
+        display: none; /* Hide nav links on mobile header */
+    }
+
+    .home-page .mobile-menu-toggle {
+        display: none; /* No hamburger needed if buttons are enough */
     }
     
     .section {
@@ -928,9 +954,17 @@ body {
     }
     
     .hero-stats {
-        flex-wrap: wrap;
-        gap: 20px;
+        justify-content: center;
         display: flex;
+        flex-wrap: wrap;
+        gap: 24px 40px;
+        margin-top: 32px;
+    }
+    
+    .stat-item {
+        align-items: center;
+        text-align: center;
+        min-width: 100px;
     }
     
     .stat-divider {
@@ -946,13 +980,15 @@ body {
 
 @media (max-width: 580px) {
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        letter-spacing: -1px;
     }
     
     .hero-stats {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        text-align: left;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px 32px;
     }
     
     .features-grid {
@@ -966,7 +1002,14 @@ body {
 
 @media (max-width: 480px) {
     .nav-title {
-        font-size: 1.1rem;
+        font-size: 1rem;
+    }
+    .nav-logo {
+        width: 28px;
+        height: 28px;
+    }
+    .navbar {
+        padding: 0 16px;
     }
     
     .hero {
@@ -1024,11 +1067,31 @@ body {
         font-size: 0.75rem;
     }
     
+    .hero-title {
+        font-size: 1.85rem;
+        line-height: 1.15;
+    }
     .stat-number {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
     }
     
     .section-title {
         font-size: 1.8rem;
+    }
+    
+    .hero-badge {
+        font-size: 0.75rem;
+        padding: 6px 14px;
+        margin-bottom: 20px;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 32px;
+        padding: 0 10px;
     }
 }
